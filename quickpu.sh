@@ -1,4 +1,4 @@
-#! /bin/zsh -xv
+#! /bin/sh
 
 ## This script configures a script that will output `git status`, add all modified files, ask you for a commit message,
 # and push to the current dir.
