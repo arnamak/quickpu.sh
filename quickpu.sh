@@ -10,11 +10,11 @@ if [ -e ./quickpu.sh ]; then
 fi
 
 # This sets a 'qp' alias for quickpu.sh, if you don't already have an alias for 'qp'. If you do, you'll have to manually create an alias for quickpu.sh should you want to have one.
-if [ "$( type qp )" = "qp not found" ]; then
+if [ "$(echo type qp )" = "qp not found" ]; then
     "alias qp='"$( echo $HOME/$SCRIPTS_DIR )"/quickpu.sh'" >> ~/.zshrc
 fi
 
-"$( git status )"
+echo "$( git status )"
 git add .
 echo "Enter your commit message followed by [ENTER]:"
 read commit
