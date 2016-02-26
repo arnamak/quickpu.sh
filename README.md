@@ -1,6 +1,6 @@
 ## quickpu.sh
 
-A quick and simple shell script that takes you directly to the commit step, then pushes to your current branch automatically.
+A quick and simple shell script that allows for reckless git-ing. Automates adding unstaged files, committing, and pushing to your current working branch by simply running `qp` and entering a commit message.
 
 ### Prerequisites
 
