@@ -1,6 +1,6 @@
 #! /bin/zsh -xv
 
-## This script configures a script that will output `git status`, add all the files, ask you for a commit message,
+## This script configures a script that will output `git status`, add all modified files, ask you for a commit message,
 # and push to the current dir.
 
 ## This script executes a first-run configuration for quickpu.sh. 
