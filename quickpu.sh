@@ -15,16 +15,28 @@ mkdir -p "$HOME/$SCRIPTS_DIR"
 touch "$HOME/$SCRIPTS_DIR"/quickpu.sh
 echo "`echo git status`\ngit add .\necho \"Enter your commit message followed by [ENTER]\"\nread commit\ngit commit -m \"\$(echo \$commit)\"\ngit push" > "$HOME/$SCRIPTS_DIR"/quickpu.sh
 
+# This detects your shell, and saves the alias in the appropriate place. Bash and Zsh are supported
+# Note for Bash: traditionally aliases are kept in their own file, .bash_aliases, which is automatically
+# sourced by your .bash_profile if you have one. This will create the file if it doesn't exist. 
+shell=`echo $SHELL`
+if [ ${shell##*/} = "zsh" ]; then
+         save_alias=".zshrc"
+elif [ ${shell##*/} = "bash" ]; then
+         save_alias=".bash_aliases"
+    if [ ! -e "$HOME/$save_alias" ]; then
+         touch "$HOME/$save_alias"
+    fi
+fi
+
 # This sets a 'qp' alias for quickpu.sh, if you don't already have an alias for 'qp'.
 # If you do, you'll have to manually create an alias for quickpu.sh should you want to have one.
-# If you use a different shell simply change the two following instances of '~/.zshrc' to 
-# whatever you want.
-if [ "$( grep -r "alias qp" ~/.zshrc )" ]; then
+if [ "$( grep -r "alias qp" "$HOME/$save_alias" )" ]; then
     echo alias already created
 else
-    echo "alias qp='sh "`echo $HOME/$SCRIPTS_DIR`"/quickpu.sh'" >> ~/.zshrc
+    echo "alias qp='sh "`echo $HOME/$SCRIPTS_DIR`"/quickpu.sh'" >> "$HOME/$save_alias"
 fi
-# Remember to source your .zshrc once the alias has been created.
+
+# Remember to source your .zshrc/.bash_aliases once the script runs.
 
 # If first run is performed in a git repository, the bare script will run.
 if [ -d .git ]; then
