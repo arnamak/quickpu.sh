@@ -9,9 +9,9 @@ A quick and simple shell script that takes you directly to the commit step, then
 
 ### Usage
 
-* Simply toss the script into your working dir and run `./shortpush.sh`.
+* Simply toss the script into your working dir and run `./quickpu.sh`.
 * That's too many keystrokes though, so I might recommend creating an alias in your.zshrc (or bash, or fish, or whatever) 
-`alias qp='./quickpush.sh'`.
+`alias qp='./quickpu.sh'`.
 * Remember to source your shell's rc file and then run `qp`.
 
 ### Examples
