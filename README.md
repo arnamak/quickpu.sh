@@ -12,7 +12,8 @@
 ### Usage
 
 * Grab the script and run from anywhere on your machine.
-* First run will create an alias for `qp` (unless you already have one), and will create `~/.scripts`. If you already have a script dir, just change the variable at the top of the file with the home-less version of your path (e.g. if your scripts are in '~/Desktop/scripts', just change the var to 'Desktop/scripts', prepending the home dir would cause problems.)
+* First run will configure an alias for `qp` (unless you already have one), will create `~/.scripts`, if you're doing the first-run from a git repo it will execute quickpu.sh, and then the configuration file will delete itself leaving only the bare script (under the name quickpu.sh, of course). 
+* If you already have a script dir, just change the variable at the top of the file with the home-less version of your path (e.g. if your scripts are in '~/Desktop/scripts', just change the var to 'Desktop/scripts', prepending the home dir would cause problems.)
 * Remember to source your shell's rc file and then run `qp`.
 * The shell will execute if you run `qp` from within any git repository, and once you enter your commit message it instantly pushes to your current branch. Be super mindful of which branch you're on when using quickpu.sh.
 
