@@ -7,9 +7,8 @@
 # this will create a directory in your home dir and place quickpu.sh inside of it.
 SCRIPTS_DIR='.scripts'
 mkdir -p "$HOME/$SCRIPTS_DIR"
-if [ -e quickpu.sh ]; then
-    mv quickpu.sh `echo $HOME/$SCRIPTS_DIR`
-fi
+touch "$HOME/$SCRIPTS_DIR"/quickpu.sh
+echo "`echo git status`\ngit add .\necho \"Enter your commit message followed by [ENTER]\"\nread commit\ngit commit -m \"\$(echo \$commit)\"\ngit push" > "$HOME/$SCRIPTS_DIR"/quickpu.sh
 
 # This sets a 'qp' alias for quickpu.sh, if you don't already have an alias for 'qp'.
 # If you do, you'll have to manually create an alias for quickpu.sh should you want to have one.
@@ -20,9 +19,5 @@ else
     echo "alias qp='sh "`echo $HOME/$SCRIPTS_DIR`"/quickpu.sh'" >> ~/.zshrc
 fi
 
-`echo git status`
-git add .
-echo "Enter your commit message followed by [ENTER]:"
-read commit
-git commit -m "$(echo $commit)" 
-git push
+sh "$HOME/$SCRIPTS_DIR"/quickpu.sh
+rm "$(pwd)"/quickpu.sh
