@@ -1,6 +1,8 @@
 ## quickpu.sh
 
-A quick and simple shell script that allows for reckless git-ing. Automates adding unstaged files, committing, and pushing to your current working branch by simply running `qp` and entering a commit message.
+*A quick and simple shell script that allows for reckless git-ing. Automates git status, git add, git commit -m, and git push (to your current working branch) by simply running `qp` and entering a commit message.
+
+*After running `qp` the next thing you see will be the output of `git status` and an interactive prompt for a commit message. All untracked files are added automatically, `status` serves as a reminder so you can better label your commit message. Once you hit enter your code has shipped.
 
 ### Prerequisites
 
