@@ -1,4 +1,4 @@
-##Quickpush
+## quickpu.sh
 
 A quick and simple shell script that takes you directly to the commit step, then pushes to your current branch automatically.
 
@@ -9,19 +9,18 @@ A quick and simple shell script that takes you directly to the commit step, then
 
 ### Usage
 
-* Simply toss the script into your working dir and run `./quickpu.sh`.
-* That's too many keystrokes though, so I might recommend creating an alias in your.zshrc (or bash, or fish, or whatever) 
-`alias qp='./quickpu.sh'`.
+* Grab the script and run from anywhere on your machine.
+* First run will create an alias for `qp` (unless you already have one), and will create `~/.scripts`. If you already have a script dir, just change the variable at the top of the file with the home-less version of your path (e.g. if your scripts are in '~/Desktop/scripts', just change the var to 'Desktop/scripts', prepending the home dir would cause problems.)
 * Remember to source your shell's rc file and then run `qp`.
+* The shell will execute if you run `qp` from within any git repository, and once you enter your commit message it instantly pushes to your current branch. Be super mindful of which branch you're on when using quickpu.sh.
 
 ### Examples
 
 * Running `qp` will display a color-less version of 'git status' (I'll add colors....later) and prompt you for a commit message.
 * As soon as you hit 'enter' to save your commit message your changes will be pushed to whatever branch you're currently working from.
 * Should you want to bail, the only place you can do it is before hitting enter to save your commit. 
+* CTRL-C is your 'oh shit' button.
 
 ### Warnings
 
-* I made this very much for my own personal use on my own projects, where I don't care about playing it fast and loose with my changes...if someone were to use this at work...well, be careful with that. 
-
-* By using this you are saying to yourself "Fuck it, add everything, commit it, and push idgaf". That just happens to be my mentality sometimes.
+* I made this very much for my own personal use on my own projects, where I don't really care if I screw up a commit or two. I don't think even I would use this for work in a production environment. So, plz b careful.
