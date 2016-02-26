@@ -33,4 +33,4 @@ fi
 
 # Erases the first-run version of quickpu.sh and leaves only the bare script
 current="$0"
-shred -u ${current}
+rm ${current}
