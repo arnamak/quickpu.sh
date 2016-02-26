@@ -1,6 +1,11 @@
 #! /bin/zsh -xv
 
-## This script will output `git status`, add all the files, ask you for a commit message, and push to the current dir.
+## This script configures a script that will output `git status`, add all the files, ask you for a commit message,
+# and push to the current dir.
+
+## This script executes a first-run configuration for quickpu.sh. 
+# This includes creating a .scripts directory, creating a 'qp' alias if none already exists, and places only the bare
+# script in your scripts dir. This file will be deleted upon completion.
 
 # This sets the user's 'scripts' directory. If you already have a place where you keep your scripts, 
 # set that desitnation as the value for the variable below. If you don't have a place for scripts yet,
