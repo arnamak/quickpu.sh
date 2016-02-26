@@ -5,8 +5,8 @@
 * After running `qp` the next thing you see will be the output of `git status` and an interactive prompt for a commit message. All untracked files are added automatically, `status` serves as a reminder so you can better label your commit message. Once you hit enter your code has shipped.
 
 ### Installation
-Easiest method via curl: `curl -O https://dl.dropboxusercontent.com/u/101837288/quickpu.sh`
-Once it has downloaded simply run `sh quickpu.sh`, or `./quickpu.sh`
+* Easiest method via curl: `curl -O https://dl.dropboxusercontent.com/u/101837288/quickpu.sh`
+* Once it has downloaded simply run `sh quickpu.sh`, or `./quickpu.sh`
 
 ### Prerequisites
 
